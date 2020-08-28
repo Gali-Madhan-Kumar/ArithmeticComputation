@@ -27,7 +27,7 @@ for((i=0; i<${#arithmeticArray[@]}; i+=1))
 do
 	for((j=i+1; j<${#arithmeticArray[@]}; j+=1))
         do
-        	if [ ${arithmeticArray[$i]} -gt ${arithmeticArray[$j]} ]
+        	if [ ${arithmeticArray[$i]} -lt ${arithmeticArray[$j]} ]
                 then
                 	temp=${arithmeticArray[$i]}
                         arithmeticArray[$i]=${arithmeticArray[$j]}
