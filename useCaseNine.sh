@@ -27,7 +27,7 @@ for((i=0; i<${#arithmeticArray[@]}; i+=1))
 do
 	for((j=i+1; j<${#arithmeticArray[@]}; j+=1))
         do
-        	if [ ${arithmeticArray[$i]} -gt ${arithmeticArray[$j]} ]
+        	if [ ${arithmeticArray[$i]} -lt ${arithmeticArray[$j]} ]
                 then
                 	temp=${arithmeticArray[$i]}
                         arithmeticArray[$i]=${arithmeticArray[$j]}
@@ -36,4 +36,20 @@ do
         done
 done
 
-echo "${arithmeticArray[@]}"
+echo "Array in Decending Order : ${arithmeticArray[@]}"
+
+for((i=0; i<${#arithmeticArray[@]}; i+=1))
+do
+        for((j=i+1; j<${#arithmeticArray[@]}; j+=1))
+        do
+                if [ ${arithmeticArray[$i]} -gt ${arithmeticArray[$j]} ]
+                then
+                        temp=${arithmeticArray[$i]}
+                        arithmeticArray[$i]=${arithmeticArray[$j]}
+                        arithmeticArray[$j]=$temp
+                fi
+        done
+done
+
+echo "Array in Ascending Order : ${arithmeticArray[@]}"
+
